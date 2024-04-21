@@ -1,0 +1,30 @@
+#NavSt{
+    box-shadow: 2ch;
+}
+
+p{
+ font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+  color: aliceblue;
+  font-size: 3ch;
+}
+
+
+.contImg{
+   
+    margin-top: 6%;
+    
+}
+
+body{
+    
+    background-image: url(https://t4.ftcdn.net/jpg/01/71/69/15/360_F_171691555_GtwuYeql9KMy7vSPZW50fpa9bcDyJbDQ.jpg);
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.imgFix {
+    max-height: 500px; 
+    width: auto;
+  }
+  
