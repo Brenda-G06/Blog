@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="PT-BR"  ng-app="blogLunar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,8 @@
     <link rel="shortcut icon" href="img/moon-solid-24.png" type="image/x-icon" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Platypi:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;500;600;700&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
     <title>Blog</title>
 </head>
@@ -25,30 +27,27 @@
         </div>
       </nav>
 
-      
-<div class="container mx-auto contImg">
-    <div class="row mx-auto">
-      <div class="col-12 col-md-4 mx-auto">
-        <div class="d-flex flex-column align-items-center">
-          <img src="https://cdn.awsli.com.br/600x1000/1047/1047512/produto/126610544/instories_17b903b4-cbd8-4d00-9239-93f341dff5a0--3--w7z0lflwk8.png" alt="" class="imgFix ">
-          <a href="pag1.html" class="btn btn-outline-dark mt-2" role="button">Clique!</a>
+ 
+      <div class="album py-5 bg-light">
+        <div class="container">
+         <div class="row" ng-controller="Rest">
+            <div class="col-md-4" ng-repeat="publicacao in publicacoes">
+              <div class="card mb-4 shadow-sm">
+                <img ng-src="{{ publicacao.thumbImage }}" >
+                <div class="card-body">
+                  <p class="card-text">{{ publicacao.title }}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">{{ publicacao.description }}</small>
+                    <div class="row">
+                    <a ng-href="pagina.html?id={{$index}}" class="btn col-sm-12">Clique!</a>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-12 col-md-4 mx-auto">
-        <div class="d-flex flex-column align-items-center">
-          <img src="https://blog.agilitafashion.com.br/wp-content/uploads/2023/03/blog-agilita-145195CL_1658_1-CALCA-MAX-PANTALONA.webp" alt="" class="imgFix ">
-          <a href="pag2.html" class="btn btn-outline-dark mt-2" role="button">Clique!</a>
-        </div>
-      </div>
-      <div class="col-12 col-md-4 mx-auto">
-        <div class="d-flex flex-column align-items-center">
-          <img src="https://img.ltwebstatic.com/images3_spmp/2023/07/04/1688463334ed571ce2a93bef19b906d065acc6ea85_thumbnail_720x.jpg" alt="" class="imgFix ">
-          <a href="pag3.html" class="btn btn-outline-dark mt-2" role="button">Clique!</a>
-        </div>
-      </div>
-    </div>
-    
-  </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
